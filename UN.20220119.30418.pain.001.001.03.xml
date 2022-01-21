@@ -1,0 +1,203 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<Document xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="urn:iso:std:iso:20022:tech:xsd:scthr:pain.001.001.03">
+  <CstmrCdtTrfInitn>
+    <GrpHdr>
+      <MsgId>UN2022011930418300</MsgId>
+      <CreDtTm>2022-01-19T08:27:01</CreDtTm>
+      <NbOfTxs>3</NbOfTxs>
+      <CtrlSum>28281.59</CtrlSum>
+      <InitgPty>
+        <Nm>KRAŠ d.d.</Nm>
+        <Id>
+          <OrgId>
+            <Othr>
+              <Id>94989605030</Id>
+            </Othr>
+          </OrgId>
+        </Id>
+      </InitgPty>
+    </GrpHdr>
+    <PmtInf>
+      <PmtInfId>GRP20220119</PmtInfId>
+      <PmtMtd>TRF</PmtMtd>
+      <NbOfTxs>3</NbOfTxs>
+      <CtrlSum>28281.59</CtrlSum>
+      <ReqdExctnDt>2022-01-19</ReqdExctnDt>
+      <Dbtr>
+        <Nm>KRAŠ d.d.</Nm>
+        <PstlAdr>
+          <Ctry>HR</Ctry>
+          <AdrLine>Ravnice 48</AdrLine>
+          <AdrLine>10000 - Zagreb</AdrLine>
+        </PstlAdr>
+        <Id>
+          <OrgId>
+            <Othr>
+              <Id>94989605030</Id>
+            </Othr>
+          </OrgId>
+        </Id>
+      </Dbtr>
+      <DbtrAcct>
+        <Id>
+          <IBAN>HR0523400091100010694</IBAN>
+        </Id>
+        <Ccy>HRK</Ccy>
+      </DbtrAcct>
+      <DbtrAgt>
+        <FinInstnId>
+          <BIC>PBZGHR2X</BIC>
+        </FinInstnId>
+      </DbtrAgt>
+      <CdtTrfTxInf>
+        <PmtId>
+          <InstrId>924862116</InstrId>
+          <EndToEndId>HR24 5770-92486-2116</EndToEndId>
+        </PmtId>
+        <Amt>
+          <InstdAmt Ccy="HRK">319.10</InstdAmt>
+        </Amt>
+        <ChrgBr>SLEV</ChrgBr>
+        <CdtrAgt>
+          <FinInstnId />
+        </CdtrAgt>
+        <Cdtr>
+          <Nm>GRAD PULA</Nm>
+          <PstlAdr>
+            <Ctry>HR</Ctry>
+            <AdrLine>Forum 1</AdrLine>
+          </PstlAdr>
+          <Id>
+            <OrgId>
+              <Othr>
+                <Id>79517841355</Id>
+              </Othr>
+            </OrgId>
+          </Id>
+        </Cdtr>
+        <CdtrAcct>
+          <Id>
+            <IBAN>HR9523600001835900006</IBAN>
+          </Id>
+        </CdtrAcct>
+        <Purp>
+          <Cd>SUPP</Cd>
+        </Purp>
+        <RmtInf>
+          <Strd>
+            <CdtrRefInf>
+              <Tp>
+                <CdOrPrtry>
+                  <Cd>SCOR</Cd>
+                </CdOrPrtry>
+                <Issr>HR ref</Issr>
+              </Tp>
+              <Ref>HR24 5770-92486-2116</Ref>
+            </CdtrRefInf>
+            <AddtlRmtInf>924862116</AddtlRmtInf>
+          </Strd>
+        </RmtInf>
+      </CdtTrfTxInf>
+      <CdtTrfTxInf>
+        <PmtId>
+          <InstrId>A05PD-2022-605</InstrId>
+          <EndToEndId>HR24 7722-522000605-1017089</EndToEndId>
+        </PmtId>
+        <Amt>
+          <InstdAmt Ccy="HRK">20530.74</InstdAmt>
+        </Amt>
+        <ChrgBr>SLEV</ChrgBr>
+        <CdtrAgt>
+          <FinInstnId />
+        </CdtrAgt>
+        <Cdtr>
+          <Nm>GRAD RIJEKA</Nm>
+          <PstlAdr>
+            <Ctry>HR</Ctry>
+            <AdrLine>51000 - Rijeka</AdrLine>
+            <AdrLine>Korzo 16</AdrLine>
+          </PstlAdr>
+          <Id>
+            <OrgId>
+              <Othr>
+                <Id>54382731928</Id>
+              </Othr>
+            </OrgId>
+          </Id>
+        </Cdtr>
+        <CdtrAcct>
+          <Id>
+            <IBAN>HR3324020061837300005</IBAN>
+          </Id>
+        </CdtrAcct>
+        <Purp>
+          <Cd>SUPP</Cd>
+        </Purp>
+        <RmtInf>
+          <Strd>
+            <CdtrRefInf>
+              <Tp>
+                <CdOrPrtry>
+                  <Cd>SCOR</Cd>
+                </CdOrPrtry>
+                <Issr>HR ref</Issr>
+              </Tp>
+              <Ref>HR24 7722-522000605-1017089</Ref>
+            </CdtrRefInf>
+            <AddtlRmtInf>A05PD-2022-605</AddtlRmtInf>
+          </Strd>
+        </RmtInf>
+      </CdtTrfTxInf>
+      <CdtTrfTxInf>
+        <PmtId>
+          <InstrId>7722-2022-71</InstrId>
+          <EndToEndId>HR24 7722-1019094-2201</EndToEndId>
+        </PmtId>
+        <Amt>
+          <InstdAmt Ccy="HRK">7431.75</InstdAmt>
+        </Amt>
+        <ChrgBr>SLEV</ChrgBr>
+        <CdtrAgt>
+          <FinInstnId />
+        </CdtrAgt>
+        <Cdtr>
+          <Nm>GRAD VARAŽDIN</Nm>
+          <PstlAdr>
+            <Ctry>HR</Ctry>
+            <AdrLine>42000 - Varaždin</AdrLine>
+            <AdrLine>TRG KRALJA TOMISLAVA 1</AdrLine>
+          </PstlAdr>
+          <Id>
+            <OrgId>
+              <Othr>
+                <Id>13269011531</Id>
+              </Othr>
+            </OrgId>
+          </Id>
+        </Cdtr>
+        <CdtrAcct>
+          <Id>
+            <IBAN>HR3423400091847200008</IBAN>
+          </Id>
+        </CdtrAcct>
+        <Purp>
+          <Cd>SUPP</Cd>
+        </Purp>
+        <RmtInf>
+          <Strd>
+            <CdtrRefInf>
+              <Tp>
+                <CdOrPrtry>
+                  <Cd>SCOR</Cd>
+                </CdOrPrtry>
+                <Issr>HR ref</Issr>
+              </Tp>
+              <Ref>HR24 7722-1019094-2201</Ref>
+            </CdtrRefInf>
+            <AddtlRmtInf>7722-2022-71</AddtlRmtInf>
+          </Strd>
+        </RmtInf>
+      </CdtTrfTxInf>
+    </PmtInf>
+  </CstmrCdtTrfInitn>
+</Document>

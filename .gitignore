@@ -50,3 +50,10 @@ modules.order
 Module.symvers
 Mkfile.old
 dkms.conf
+/.vs/PozivNaBroj/v16
+/PozivNaBroj/bin/Debug/PozivNaBroj.exe.config
+/PozivNaBroj/bin/Debug
+/PozivNaBroj/obj/Debug
+/sepa.hr.pain.001.001.03.NOVA.xsd
+/sepa.hr_.pain_.001.001.03.NOVA_.xsd_.zip
+/sepa.xml
