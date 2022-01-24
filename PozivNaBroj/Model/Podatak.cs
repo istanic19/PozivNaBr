@@ -10,10 +10,17 @@ namespace PozivNaBroj.Model
     public class Podatak
     {
         private string _broj;
+        private int _index;
 
-        public Podatak(string broj)
+        public Podatak(string broj, int index)
         {
+            _index = index;
             _broj = broj;
+        }
+
+        public int Segment
+        {
+            get { return _index; }
         }
 
         public string Broj
@@ -33,8 +40,10 @@ namespace PozivNaBroj.Model
             if (minLen.HasValue && _broj.Length < minLen.Value)
                 return false;
 
-            if (calculator != null)
-                return calculator.Check(_broj);
+            if (calculator != null && !calculator.Check(_broj))
+            {
+                return false;
+            }
 
             return true;
         }

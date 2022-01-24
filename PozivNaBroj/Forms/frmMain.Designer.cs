@@ -36,6 +36,7 @@ namespace PozivNaBroj.Forms
             this.btnValidate = new System.Windows.Forms.Button();
             this.btnCreate = new System.Windows.Forms.Button();
             this.pbResult = new System.Windows.Forms.PictureBox();
+            this.lblError = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pbResult)).BeginInit();
             this.SuspendLayout();
             // 
@@ -101,11 +102,21 @@ namespace PozivNaBroj.Forms
             this.pbResult.TabIndex = 6;
             this.pbResult.TabStop = false;
             // 
+            // lblError
+            // 
+            this.lblError.AutoSize = true;
+            this.lblError.ForeColor = System.Drawing.Color.Red;
+            this.lblError.Location = new System.Drawing.Point(178, 22);
+            this.lblError.Name = "lblError";
+            this.lblError.Size = new System.Drawing.Size(0, 13);
+            this.lblError.TabIndex = 7;
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.lblError);
             this.Controls.Add(this.pbResult);
             this.Controls.Add(this.btnCreate);
             this.Controls.Add(this.btnValidate);
@@ -131,6 +142,7 @@ namespace PozivNaBroj.Forms
         private System.Windows.Forms.Button btnValidate;
         private System.Windows.Forms.Button btnCreate;
         private System.Windows.Forms.PictureBox pbResult;
+        private System.Windows.Forms.Label lblError;
     }
 }
 

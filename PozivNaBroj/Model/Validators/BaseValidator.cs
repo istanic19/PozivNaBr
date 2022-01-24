@@ -66,10 +66,12 @@ namespace PozivNaBroj.Model.Validators
             var podaci = new List<Podatak>();
             _allNumbers = "";
 
+            int index = 1;
             foreach (var s in segmenti)
             {
-                podaci.Add(new Podatak(s));
+                podaci.Add(new Podatak(s, index));
                 _allNumbers += s;
+                index++;
             }
 
             return podaci;

@@ -65,13 +65,16 @@ namespace PozivNaBroj.Forms
 
             validator.PozivNBr = txtPozivNaBroj.Text;
 
-            if (validator.Validate())
+            var result = validator.Validate();
+            if (result)
             {
                 pbResult.Image = Resources.Accept;
+                lblError.Text = "";
             }
             else
             {
                 pbResult.Image = Resources.Error;
+                //lblError.Text = result.Message;
             }
         }
 

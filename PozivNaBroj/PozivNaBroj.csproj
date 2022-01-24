@@ -55,6 +55,8 @@
     <Compile Include="Helpers\StringHelpers.cs" />
     <Compile Include="Model\Calculators\BaseCalculator.cs" />
     <Compile Include="Model\Calculators\ISO7064MOD1110.cs" />
+    <Compile Include="Model\Calculators\MOD10.cs" />
+    <Compile Include="Model\Calculators\MOD10ZB.cs" />
     <Compile Include="Model\Calculators\MOD11INICalculator.cs" />
     <Compile Include="Model\Calculators\MOD11JMBJMBG.cs" />
     <Compile Include="Model\Calculators\MOD11P7.cs" />
@@ -63,6 +65,7 @@
     <Compile Include="Model\ModelPoziva.cs" />
     <Compile Include="Model\ModelPozivConfiguration.cs" />
     <Compile Include="Model\Podatak.cs" />
+    <Compile Include="Model\PozivNaBrojValidationResult.cs" />
     <Compile Include="Model\Validators\BaseValidator.cs" />
     <Compile Include="Model\Validators\HR00.cs" />
     <Compile Include="Model\Validators\HR01.cs" />
@@ -78,6 +81,18 @@
     <Compile Include="Model\Validators\HR11.cs" />
     <Compile Include="Model\Validators\HR12.cs" />
     <Compile Include="Model\Validators\HR13.cs" />
+    <Compile Include="Model\Validators\HR14.cs" />
+    <Compile Include="Model\Validators\HR15.cs" />
+    <Compile Include="Model\Validators\HR16.cs" />
+    <Compile Include="Model\Validators\HR17.cs" />
+    <Compile Include="Model\Validators\HR18.cs" />
+    <Compile Include="Model\Validators\HR19.cs" />
+    <Compile Include="Model\Validators\HR23.cs" />
+    <Compile Include="Model\Validators\HR24.cs" />
+    <Compile Include="Model\Validators\HR25.cs" />
+    <Compile Include="Model\Validators\HR26.cs" />
+    <Compile Include="Model\Validators\HR27.cs" />
+    <Compile Include="Model\Validators\HR28.cs" />
     <Compile Include="Model\Validators\HR99.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace PozivNaBroj.Model.Calculators
 {
-    public class MOD11P7 : BaseCalculator
+    public class MOD10ZB:BaseCalculator
     {
         public override int Calculate(string broj, bool check = true)
         {
@@ -19,23 +19,22 @@ namespace PozivNaBroj.Model.Calculators
             {
                 if (check && (i == nums.Count - 1))
                     continue;
-
-                mult++;
-                if (mult > 7)
-                    mult = 2;
+                
 
                 sum += mult * nums[i];
+
+                if (mult == 1)
+                    mult = 2;
+                else
+                    mult = 1;
             }
 
-            sum = sum % 11;
+            sum = sum % 10;
 
-            if (sum == 0)
-                return 5;
-            else if (sum == 1)
+            if (sum == 0 || sum == 1)
                 return 0;
-            else 
-                return 11- sum;
 
+            return sum;
         }
 
         public override string Create(string broj)
@@ -45,8 +44,6 @@ namespace PozivNaBroj.Model.Calculators
 
         public override bool Check(string broj)
         {
-            if (!broj.StartsWith("3"))
-                return false;
             var kz = Calculate(broj, true);
 
             if (broj.Last().ToString() == kz.ToString())
