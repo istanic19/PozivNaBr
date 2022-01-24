@@ -19,6 +19,7 @@ namespace PozivNaBroj.Model.Validators
                 return true;
             }
 
+            Error = "Poziv na broj mora biti prazan.";
             return false;
         }
 

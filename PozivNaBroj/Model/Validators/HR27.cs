@@ -9,11 +9,11 @@ namespace PozivNaBroj.Model.Validators
 {
     public class HR27:BaseValidator
     {
-        private MOD11INICalculator _calculator;
+        private MOD11INI _calculator;
 
         public HR27()
         {
-            _calculator = new MOD11INICalculator();
+            _calculator = new MOD11INI();
         }
 
         public override bool Validate()
@@ -22,7 +22,10 @@ namespace PozivNaBroj.Model.Validators
                 return false;
 
             if (_podaci.Count != 2)
+            {
+                Error = "Poziv na broj mora imati 2 podatka.";
                 return false;
+            }
 
             if (!_podaci[0].Validate(4, 4, _calculator))
                 return false;

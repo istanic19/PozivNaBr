@@ -9,10 +9,10 @@ namespace PozivNaBroj.Model.Validators
 {
     public class HR24 : BaseValidator
     {
-        private MOD11INICalculator _calculator;
+        private MOD11INI _calculator;
         public HR24()
         {
-            _calculator = new MOD11INICalculator();
+            _calculator = new MOD11INI();
             _maxPodaciCount = 4;
         }
 

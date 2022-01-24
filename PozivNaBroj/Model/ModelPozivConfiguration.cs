@@ -31,7 +31,7 @@ namespace PozivNaBroj.Model
             Models.Add(new ModelPoziva("HR15"));//Provjeriti validaciju 
             Models.Add(new ModelPoziva("HR16"));
             Models.Add(new ModelPoziva("HR17"));
-            Models.Add(new ModelPoziva("HR18"));
+            Models.Add(new ModelPoziva("HR18"));//Provjeriti
             Models.Add(new ModelPoziva("HR19"));
             Models.Add(new ModelPoziva("HR23"));
             Models.Add(new ModelPoziva("HR24"));
@@ -39,6 +39,27 @@ namespace PozivNaBroj.Model
             Models.Add(new ModelPoziva("HR26"));
             Models.Add(new ModelPoziva("HR27"));
             Models.Add(new ModelPoziva("HR28"));
+            Models.Add(new ModelPoziva("HR29"));
+            Models.Add(new ModelPoziva("HR30"));
+            Models.Add(new ModelPoziva("HR31"));
+            Models.Add(new ModelPoziva("HR33"));
+            Models.Add(new ModelPoziva("HR34"));
+            Models.Add(new ModelPoziva("HR35"));
+            Models.Add(new ModelPoziva("HR40"));//Provjeriti validaciju 
+            Models.Add(new ModelPoziva("HR41"));
+            Models.Add(new ModelPoziva("HR42"));
+            Models.Add(new ModelPoziva("HR43"));
+            Models.Add(new ModelPoziva("HR50"));
+            Models.Add(new ModelPoziva("HR55"));
+            Models.Add(new ModelPoziva("HR62"));
+            Models.Add(new ModelPoziva("HR63"));
+            Models.Add(new ModelPoziva("HR64"));
+            Models.Add(new ModelPoziva("HR65"));
+            Models.Add(new ModelPoziva("HR67"));
+            Models.Add(new ModelPoziva("HR68"));
+            Models.Add(new ModelPoziva("HR69"));
+            Models.Add(new ModelPoziva("HR83"));//Provjeriti
+            Models.Add(new ModelPoziva("HR84"));//Provjeriti
 
             Models.Add(new ModelPoziva("HR99"));
         }

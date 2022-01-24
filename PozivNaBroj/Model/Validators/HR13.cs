@@ -16,9 +16,8 @@ namespace PozivNaBroj.Model.Validators
         }
         public override bool Validate()
         {
-            var result = base.Validate();
-            if (!result)
-                return result;
+            if (!base.Validate())
+                return false;
 
             for (int i = 0; i < _podaci.Count; ++i)
             {

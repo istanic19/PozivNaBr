@@ -6,13 +6,13 @@ using System.Threading.Tasks;
 
 namespace PozivNaBroj.Model.Calculators
 {
-    public class MOD11JMBJMBG: BaseCalculator
+    public class MOD10S:BaseCalculator
     {
         public override int Calculate(string broj, bool check = true)
         {
             var nums = broj.Select(c => int.Parse(c.ToString())).ToList();
 
-            int mult = 1;
+            int mult = 2;
             int sum = 0;
 
             for (int i = nums.Count - 1; i >= 0; --i)
@@ -20,19 +20,24 @@ namespace PozivNaBroj.Model.Calculators
                 if (check && (i == nums.Count - 1))
                     continue;
 
-                mult++;
-                if (mult > 7)
-                    mult = 2;
+                var umnozak = mult * nums[i];
+                if (umnozak > 9)
+                    umnozak = umnozak / 10 + umnozak % 10;
 
-                sum += mult * nums[i];
+                sum += umnozak;
+
+                if (mult == 1)
+                    mult = 2;
+                else
+                    mult = 1;
             }
 
-            sum = sum % 11;
+            sum = sum % 10;
 
-            if (sum != 0)
-                return 11 - sum;
+            if (sum == 0)
+                return 0;
 
-            return sum;
+            return 10 - sum;
         }
 
         public override string Create(string broj)

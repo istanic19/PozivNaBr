@@ -1,18 +1,18 @@
-﻿using PozivNaBroj.Model.Calculators;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using PozivNaBroj.Model.Calculators;
 
 namespace PozivNaBroj.Model.Validators
 {
-    public class HR16:BaseValidator
+    public class HR34: BaseValidator
     {
-        private MOD11INI _calculator;
-        public HR16()
+        private ISO7064MOD1110 _calculator;
+        public HR34()
         {
-            _calculator = new MOD11INI();
+            _calculator = new ISO7064MOD1110();
         }
 
         public override bool Validate()
@@ -26,27 +26,30 @@ namespace PozivNaBroj.Model.Validators
                 return false;
             }
 
-            int poz = 0;
             foreach (var podatak in _podaci)
             {
-                if (poz == 0)
+                if (podatak.Index == 1)
                 {
-                    if (!podatak.Validate(5, 5, _calculator))
+                    if (!podatak.Validate(6, calculator: _calculator))
                         return false;
                 }
-                else if (poz == 1)
+                else if (podatak.Index == 2)
                 {
-                    if (!podatak.Validate(4, 4, _calculator))
+                    if (!podatak.Validate(7, calculator: _calculator))
                         return false;
                 }
                 else
                 {
-                    if (!podatak.Validate(8, 8))
+                    if (!podatak.Validate(5, calculator: _calculator))
                         return false;
+                    if (podatak.Broj.StartsWith("0"))
+                    {
+                        Error = $"Podatak 3 ne smije imati početne nule.";
+                        return false;
+                    }
                 }
-
-                poz++;
             }
+
 
             return true;
         }
@@ -56,20 +59,27 @@ namespace PozivNaBroj.Model.Validators
             if (_podaci.Count < 1)
                 return string.Empty;
 
-            var clone = new HR16();
+            var clone = new HR34();
             clone.PozivNaBroj = PozivNaBroj;
 
-            if (clone._podaci[0].Broj.Length < 5)
+            if (clone._podaci[0].Broj.Length < 6)
             {
                 var k = _calculator.Calculate(clone._podaci[0].Broj, false);
                 clone._podaci[0].Broj = clone._podaci[0].Broj + k;
             }
 
-            if (clone._podaci.Count >= 2 && clone._podaci[1].Broj.Length<4)
+            if (clone._podaci.Count > 1 && clone._podaci[1].Broj.Length < 7)
             {
-                var k1 = _calculator.Calculate(clone._podaci[1].Broj, false);
-                clone._podaci[1].Broj = clone._podaci[1].Broj + k1;
+                var k = _calculator.Calculate(clone._podaci[1].Broj, false);
+                clone._podaci[1].Broj = clone._podaci[1].Broj + k;
             }
+
+            if (clone._podaci.Count > 2 && clone._podaci[2].Broj.Length < 5)
+            {
+                var k = _calculator.Calculate(clone._podaci[2].Broj, false);
+                clone._podaci[2].Broj = clone._podaci[2].Broj + k;
+            }
+
 
             clone.PozivNaBroj = clone.PodaciToBroj();
 

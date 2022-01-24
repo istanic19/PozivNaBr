@@ -38,6 +38,28 @@ namespace PozivNaBroj.Model.Calculators
 
         }
 
+        public int GetRest(string broj)
+        {
+            var nums = broj.Select(c => int.Parse(c.ToString())).ToList();
+
+            int mult = 1;
+            int sum = 0;
+
+            for (int i = nums.Count - 1; i >= 0; --i)
+            {
+
+                mult++;
+                if (mult > 7)
+                    mult = 2;
+
+                sum += mult * nums[i];
+            }
+
+            sum = sum % 11;
+
+            return sum;
+        }
+
         public override string Create(string broj)
         {
             return broj + Calculate(broj).ToString();

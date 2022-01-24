@@ -1,20 +1,21 @@
-﻿using PozivNaBroj.Model.Calculators;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using PozivNaBroj.Model.Calculators;
 
 namespace PozivNaBroj.Model.Validators
 {
-    public class HR26:BaseValidator
+    public class HR64:BaseValidator
     {
         private MOD11INI _calculator;
-        private ISO7064MOD1110 _oibCalculator;
-        public HR26()
+        private ISO7064MOD1110 _calculator2;
+
+        public HR64()
         {
             _calculator = new MOD11INI();
-            _oibCalculator = new ISO7064MOD1110();
+            _calculator2 = new ISO7064MOD1110();
             _maxPodaciCount = 4;
         }
 
@@ -25,40 +26,44 @@ namespace PozivNaBroj.Model.Validators
 
             if (_podaci.Count < 3)
             {
-                Error = "Poziv na broj mora imati minimalno 3 podatka.";
+                Error = "Poziv na broj mora imati najmanje 3 podatka.";
                 return false;
             }
 
-            for (int i = 0; i < _podaci.Count; ++i)
+            foreach (var podatak in _podaci)
             {
-                if (i == 0)
+                if (podatak.Index == 1)
                 {
-                    if (!_podaci[i].Validate(4, 4, calculator: _oibCalculator))
+                    if (!podatak.Validate(4, 4, calculator: _calculator))
                         return false;
                 }
-                else if (i == 1 || i == 2)
+                else if (podatak.Index == 2)
                 {
-                    if (_podaci[i].Broj.Length <= 10)
+                    if (!podatak.Validate(5, calculator: _calculator2))
+                        return false;
+                }
+                else if (podatak.Index == 3)
+                {
+                    if (podatak.Broj.Length == 11)
                     {
-                        if (!_podaci[i].Validate(calculator: _oibCalculator))
+                        if (!podatak.Validate(calculator: _calculator2))
                             return false;
                     }
                     else
                     {
-                        if (!_podaci[i].Validate(11, 11, calculator: _oibCalculator))
+                        if (podatak.Validate())
                             return false;
                     }
                 }
                 else
                 {
-                    if (!_podaci[i].Validate())
+                    if (!podatak.Validate(9))
                         return false;
                 }
             }
 
 
             return true;
-
         }
 
         public override string Kreiraj()
@@ -66,7 +71,7 @@ namespace PozivNaBroj.Model.Validators
             if (_podaci.Count < 1)
                 return string.Empty;
 
-            var clone = new HR26();
+            var clone = new HR64();
             clone.PozivNaBroj = PozivNaBroj;
 
             if (clone._podaci[0].Broj.Length < 4)
@@ -75,23 +80,18 @@ namespace PozivNaBroj.Model.Validators
                 clone._podaci[0].Broj = clone._podaci[0].Broj + k;
             }
 
-            if (clone._podaci.Count > 1)
+            if (clone._podaci.Count > 1 && clone._podaci[1].Broj.Length < 5)
             {
-                if (clone._podaci[1].Broj.Length < 10)
-                {
-                    var k1 = _calculator.Calculate(clone._podaci[1].Broj, false);
-                    clone._podaci[1].Broj = clone._podaci[1].Broj + k1;
-                }
+                var k = _calculator2.Calculate(clone._podaci[1].Broj, false);
+                clone._podaci[1].Broj = clone._podaci[1].Broj + k;
             }
 
-            if (clone._podaci.Count > 2)
+            if (clone._podaci.Count > 2 && clone._podaci[2].Broj.Length == 10)
             {
-                if (clone._podaci[2].Broj.Length < 10)
-                {
-                    var k2 = _calculator.Calculate(clone._podaci[2].Broj, false);
-                    clone._podaci[2].Broj = clone._podaci[2].Broj + k2;
-                }
+                var k = _calculator2.Calculate(clone._podaci[2].Broj, false);
+                clone._podaci[2].Broj = clone._podaci[2].Broj + k;
             }
+
 
             clone.PozivNaBroj = clone.PodaciToBroj();
 

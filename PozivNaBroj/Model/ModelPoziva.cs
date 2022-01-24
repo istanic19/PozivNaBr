@@ -13,6 +13,11 @@ namespace PozivNaBroj.Model
         private BaseValidator _validator;
         private string _pozivNaBroj;
 
+        public string Error
+        {
+            get { return _validator.Error; }
+        }
+
         public string PozivNBr
         {
             get { return _pozivNaBroj; }

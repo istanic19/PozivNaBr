@@ -6,31 +6,30 @@ using System.Threading.Tasks;
 
 namespace PozivNaBroj.Model.Validators
 {
-    public class HR25:BaseValidator
+    public class HR30:BaseValidator
     {
         public override bool Validate()
         {
             if (!base.Validate())
                 return false;
 
-            if (_podaci.Count != 2)
+            if (_podaci.Count != 3)
             {
-                Error = "Poziv na broj mora imati 2 podatka.";
+                Error = "Poziv na broj mora imati 3 podatka.";
                 return false;
             }
 
-            if (!_podaci[0].Validate(3, 3))
+            if (!_podaci[0].Validate(10, 10))
                 return false;
 
-            if (!_podaci[1].Validate(7, 7))
+            if (!_podaci[1].Validate(4, 4))
                 return false;
+
+            if (!_podaci[2].Validate(6))
+                return false;
+
 
             return true;
-        }
-
-        public override string Kreiraj()
-        {
-            return PozivNaBroj;
         }
     }
 }

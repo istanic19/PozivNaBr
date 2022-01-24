@@ -9,11 +9,11 @@ namespace PozivNaBroj.Model.Validators
 {
     public class HR05 : BaseValidator
     {
-        private MOD11INICalculator _calculator;
+        private MOD11INI _calculator;
         private ISO7064MOD1110 _oibValidator;
         public HR05()
         {
-            _calculator = new MOD11INICalculator();
+            _calculator = new MOD11INI();
             _oibValidator = new ISO7064MOD1110();
         }
 
@@ -38,7 +38,7 @@ namespace PozivNaBroj.Model.Validators
         public override string Kreiraj()
         {
 
-            if (_podaci.Count < 2)
+            if (_podaci.Count < 1)
                 return PozivNaBroj;
 
             var clone = new HR05();

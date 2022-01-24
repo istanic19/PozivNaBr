@@ -14,8 +14,11 @@ namespace PozivNaBroj.Model.Calculators
 
             int ostatak = 10;
 
-            for (int i = 0; i < 10; i++)
+            for (int i = 0; i < nums.Count; i++)
             {
+                if (check && (i == nums.Count - 1))
+                    continue;
+
                 int znamenka = nums[i] + ostatak;
 
                 int meduostatak = znamenka % 10;

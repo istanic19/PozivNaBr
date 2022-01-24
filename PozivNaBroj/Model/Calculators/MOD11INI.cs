@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace PozivNaBroj.Model.Calculators
 {
-    public class MOD11INICalculator: BaseCalculator
+    public class MOD11INI: BaseCalculator
     {
         public override int Calculate(string broj, bool check = true)
         {

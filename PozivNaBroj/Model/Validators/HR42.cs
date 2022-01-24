@@ -7,13 +7,15 @@ using PozivNaBroj.Model.Calculators;
 
 namespace PozivNaBroj.Model.Validators
 {
-    public class HR01 : BaseValidator
+    public class HR42:BaseValidator
     {
-        private MOD11INI _calculator;
-        public HR01()
+        private MOD11JMBJMBG _calculator;
+
+        public HR42()
         {
-            _calculator = new MOD11INI();
+            _calculator = new MOD11JMBJMBG();
         }
+
         public override bool Validate()
         {
             if (!base.Validate())
@@ -28,7 +30,7 @@ namespace PozivNaBroj.Model.Validators
 
             if (!_calculator.Check(_allNumbers))
             {
-                Error= $"Pogreška validacije {_calculator.GetName()}";
+                Error = $"Pogreška validacije {_calculator.GetName()}";
                 return false;
             }
 

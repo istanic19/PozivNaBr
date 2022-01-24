@@ -9,10 +9,10 @@ namespace PozivNaBroj.Model.Validators
 {
     public class HR23:BaseValidator
     {
-        private MOD11INICalculator _calculator;
+        private MOD11INI _calculator;
         public HR23()
         {
-            _calculator = new MOD11INICalculator();
+            _calculator = new MOD11INI();
             _maxPodaciCount = 4;
         }
 
@@ -22,7 +22,10 @@ namespace PozivNaBroj.Model.Validators
                 return false;
 
             if (!PozivNaBroj.StartsWith("6"))
+            {
+                Error = "Prva znamenka poziva na broj mora biti 6.";
                 return false;
+            }
 
             for (int i = 0; i < _podaci.Count; ++i)
             {

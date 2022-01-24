@@ -7,12 +7,14 @@ using PozivNaBroj.Model.Calculators;
 
 namespace PozivNaBroj.Model.Validators
 {
-    public class HR04 : BaseValidator
+    public class HR31:BaseValidator
     {
-        private MOD11INI _calculator;
-        public HR04()
+        private ISO7064MOD1110 _calculator;
+
+        public HR31()
         {
-            _calculator = new MOD11INI();
+            _calculator = new ISO7064MOD1110();
+            _maxPodaciCount = 4;
         }
 
         public override bool Validate()
@@ -20,40 +22,39 @@ namespace PozivNaBroj.Model.Validators
             if (!base.Validate())
                 return false;
 
-            for (int i = 0; i < _podaci.Count; ++i)
+            foreach (var podatak in _podaci)
             {
-                if (i == 1)
+                if (podatak.Index == 1)
                 {
-                    if (!_podaci[i].Validate())
+                    if (!podatak.Validate(6, calculator: _calculator))
                         return false;
                 }
                 else
                 {
-                    if (!_podaci[i].Validate(calculator: _calculator))
+                    if (!podatak.Validate())
                         return false;
                 }
-
             }
 
-            return true;
 
+            return true;
         }
 
         public override string Kreiraj()
         {
+            if (_podaci.Count < 1)
+                return string.Empty;
 
-            var clone = new HR04();
+            var clone = new HR31();
             clone.PozivNaBroj = PozivNaBroj;
 
-            var k = _calculator.Calculate(clone._podaci[0].Broj, false);
-            clone._podaci[0].Broj = clone._podaci[0].Broj + k;
+            if (clone._podaci[0].Broj.Length < 6)
+            {
+                var k = _calculator.Calculate(clone._podaci[0].Broj, false);
+                clone._podaci[0].Broj = clone._podaci[0].Broj + k;
+            }
 
             
-            if (clone._podaci.Count > 2)
-            {
-                var k2 = _calculator.Calculate(clone._podaci[2].Broj, false);
-                clone._podaci[2].Broj = clone._podaci[2].Broj + k2;
-            }
 
             clone.PozivNaBroj = clone.PodaciToBroj();
 

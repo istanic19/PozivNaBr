@@ -74,7 +74,7 @@ namespace PozivNaBroj.Forms
             else
             {
                 pbResult.Image = Resources.Error;
-                //lblError.Text = result.Message;
+                lblError.Text = validator.Error;
             }
         }
 

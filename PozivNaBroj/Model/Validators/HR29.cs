@@ -1,20 +1,19 @@
-﻿using PozivNaBroj.Model.Calculators;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using PozivNaBroj.Model.Calculators;
 
 namespace PozivNaBroj.Model.Validators
 {
-    public class HR28:BaseValidator
+    public class HR29: BaseValidator
     {
         private MOD11INI _calculator;
 
-        public HR28()
+        public HR29()
         {
             _calculator = new MOD11INI();
-            _maxPodaciCount = 4;
         }
 
         public override bool Validate()
@@ -22,26 +21,20 @@ namespace PozivNaBroj.Model.Validators
             if (!base.Validate())
                 return false;
 
-            if (_podaci.Count < 3)
+            if (_podaci.Count != 3)
             {
-                Error = "Poziv na broj mora imati minimalno 3 podatka.";
+                Error = "Poziv na broj mora imati 3 podatka.";
                 return false;
             }
 
             if (!_podaci[0].Validate(4, 4, _calculator))
                 return false;
 
-            if (!_podaci[1].Validate(3, 3, _calculator))
+            if (!_podaci[1].Validate(calculator: _calculator))
                 return false;
 
-            if (!_podaci[2].Validate(6, 6, _calculator))
+            if (!_podaci[2].Validate(calculator: _calculator))
                 return false;
-
-            if (_podaci.Count > 3)
-            {
-                if (!_podaci[3].Validate(6))
-                    return false;
-            }
 
 
             return true;
@@ -52,7 +45,7 @@ namespace PozivNaBroj.Model.Validators
             if (_podaci.Count < 1)
                 return string.Empty;
 
-            var clone = new HR28();
+            var clone = new HR29();
             clone.PozivNaBroj = PozivNaBroj;
 
             if (clone._podaci[0].Broj.Length < 4)
@@ -63,7 +56,7 @@ namespace PozivNaBroj.Model.Validators
 
             if (clone._podaci.Count > 1)
             {
-                if (clone._podaci[1].Broj.Length < 3)
+                if (clone._podaci[1].Broj.Length < 12)
                 {
                     var k1 = _calculator.Calculate(clone._podaci[1].Broj, false);
                     clone._podaci[1].Broj = clone._podaci[1].Broj + k1;
@@ -72,7 +65,7 @@ namespace PozivNaBroj.Model.Validators
 
             if (clone._podaci.Count > 2)
             {
-                if (clone._podaci[2].Broj.Length < 6)
+                if (clone._podaci[2].Broj.Length < 12)
                 {
                     var k2 = _calculator.Calculate(clone._podaci[2].Broj, false);
                     clone._podaci[2].Broj = clone._podaci[2].Broj + k2;

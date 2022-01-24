@@ -7,12 +7,15 @@ using PozivNaBroj.Model.Calculators;
 
 namespace PozivNaBroj.Model.Validators
 {
-    public class HR02 : BaseValidator
+    public class HR41:BaseValidator
     {
         private MOD11INI _calculator;
-        public HR02()
+        private MOD11JMBJMBG _calculator2;
+
+        public HR41()
         {
             _calculator = new MOD11INI();
+            _calculator2 = new MOD11JMBJMBG();
         }
 
         public override bool Validate()
@@ -20,44 +23,46 @@ namespace PozivNaBroj.Model.Validators
             if (!base.Validate())
                 return false;
 
-            int poz = 0;
+
             foreach (var podatak in _podaci)
             {
-                if (poz == 0)
+                if (podatak.Index == 1)
                 {
-                    if (!podatak.Validate())
+                    if (!podatak.Validate(13, 13, calculator: _calculator2))
                         return false;
                 }
-                else
+                else if (podatak.Index == 2)
                 {
                     if (!podatak.Validate(calculator: _calculator))
                         return false;
                 }
-
-                poz++;
             }
 
-            return true;
 
+            return true;
         }
 
         public override string Kreiraj()
         {
+            if (_podaci.Count < 1)
+                return string.Empty;
 
-            if (_podaci.Count < 2)
-                return PozivNaBroj;
-
-            var clone = new HR02();
+            var clone = new HR41();
             clone.PozivNaBroj = PozivNaBroj;
 
-            var k= _calculator.Calculate(clone._podaci[1].Broj, false);
-            clone._podaci[1].Broj = clone._podaci[1].Broj + k;
-
-            if (clone._podaci.Count == 3)
+            if (clone._podaci[0].Broj.Length < 13)
             {
-                var k2 = _calculator.Calculate(clone._podaci[2].Broj, false);
-                clone._podaci[2].Broj = clone._podaci[2].Broj + k2;
+                var k = _calculator2.Calculate(clone._podaci[0].Broj, false);
+                clone._podaci[0].Broj = clone._podaci[0].Broj + k;
             }
+
+            if (clone._podaci.Count > 1 && clone._podaci[1].Broj.Length < 12)
+            {
+                var k = _calculator.Calculate(clone._podaci[1].Broj, false);
+                clone._podaci[1].Broj = clone._podaci[1].Broj + k;
+            }
+
+
 
             clone.PozivNaBroj = clone.PodaciToBroj();
 

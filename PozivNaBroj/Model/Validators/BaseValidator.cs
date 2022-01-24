@@ -13,6 +13,8 @@ namespace PozivNaBroj.Model.Validators
         protected string _allNumbers;
         protected int _maxPodaciCount = 3;
 
+        public string Error { get; set; }
+
         public string PozivNaBroj
         {
             get { return _pozivNaBroj; }
@@ -31,12 +33,26 @@ namespace PozivNaBroj.Model.Validators
 
         public virtual bool Validate()
         {
+            Error = "";
+
             if (string.IsNullOrEmpty(_pozivNaBroj))
+            {
+                Error = "Poziv na broj ne moiže biti prazan.";
                 return false;
+            }
+
             if (_pozivNaBroj.Length > 22)
+            {
+                Error = "Poziv na broj može biti do 22 znaka.";
                 return false;
+            }
+
             if (_podaci.Count < 1 || _podaci.Count > _maxPodaciCount)
+            {
+                Error = $"Maksimaln broj podataka u pozivu na broj je {_maxPodaciCount}.";
                 return false;
+            }
+
             return true;
         }
 
@@ -69,7 +85,7 @@ namespace PozivNaBroj.Model.Validators
             int index = 1;
             foreach (var s in segmenti)
             {
-                podaci.Add(new Podatak(s, index));
+                podaci.Add(new Podatak(s, index, this));
                 _allNumbers += s;
                 index++;
             }

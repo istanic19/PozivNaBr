@@ -10,10 +10,10 @@ namespace PozivNaBroj.Model.Validators
 {
     public class HR06 : BaseValidator
     {
-        private MOD11INICalculator _calculator;
+        private MOD11INI _calculator;
         public HR06()
         {
-            _calculator = new MOD11INICalculator();
+            _calculator = new MOD11INI();
         }
 
         public override bool Validate()
@@ -33,10 +33,17 @@ namespace PozivNaBroj.Model.Validators
             if (_podaci.Count == 3)
             {
                 if (_podaci[2].Broj.StartsWith("0"))
+                {
+                    Error = $"Podatak 3 ne smije imati početne nule.";
                     return false;
+                }
+
                 var group = _podaci[1].Broj + _podaci[2].Broj;
                 if (!_calculator.Check(group))
+                {
+                    Error = $"Pogreška {_calculator.GetName()} za grupu podataka 2 i 3.";
                     return false;
+                }
             }
 
             return true;
