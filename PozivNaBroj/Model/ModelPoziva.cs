@@ -35,7 +35,7 @@ namespace PozivNaBroj.Model
             if (t != null)
                 _validator = (BaseValidator) Activator.CreateInstance(t);
             else
-                _validator = new BaseValidator();
+                throw new Exception("Nepoznat model");
         }
 
         public override string ToString()

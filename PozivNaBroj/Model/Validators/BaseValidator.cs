@@ -37,7 +37,7 @@ namespace PozivNaBroj.Model.Validators
 
             if (string.IsNullOrEmpty(_pozivNaBroj))
             {
-                Error = "Poziv na broj ne moiže biti prazan.";
+                Error = "Poziv na broj ne može biti prazan.";
                 return false;
             }
 

@@ -41,7 +41,7 @@ namespace PozivNaBroj.Forms
 
         private void LoadData()
         {
-            lkpPozivNaBroj.DataSource = ModelPozivConfiguration.Models;
+            lkpPozivNaBroj.DataSource = PozivNaBrojService.GetAll();
         }
 
         #endregion

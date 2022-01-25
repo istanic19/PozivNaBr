@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace PozivNaBroj.Model.Calculators
 {
-    public class MOD10 : BaseCalculator
+    public class MOD10:BaseCalculator
     {
         public override int Calculate(string broj, bool check = true)
         {
@@ -20,8 +20,11 @@ namespace PozivNaBroj.Model.Calculators
                 if (check && (i == nums.Count - 1))
                     continue;
 
+                var umnozak = mult * nums[i];
+                if (umnozak > 9)
+                    umnozak = umnozak / 10 + umnozak % 10;
 
-                sum += mult * nums[i];
+                sum += umnozak;
 
                 if (mult == 1)
                     mult = 2;

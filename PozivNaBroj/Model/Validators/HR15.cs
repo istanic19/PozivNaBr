@@ -9,10 +9,10 @@ namespace PozivNaBroj.Model.Validators
 {
     public class HR15 : BaseValidator
     {
-        private MOD10S _calculator;
+        private MOD10 _calculator;
         public HR15()
         {
-            _calculator = new MOD10S();
+            _calculator = new MOD10();
         }
 
         public override bool Validate()

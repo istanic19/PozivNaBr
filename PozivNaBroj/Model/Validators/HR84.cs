@@ -52,7 +52,7 @@ namespace PozivNaBroj.Model.Validators
                 {
                     if (!podatak.Validate(10, 10))
                         return false;
-                    if (_podaci[1].Broj.Length != 5)
+                    if (_podaci[1].Broj.Length != 4)
                     {
                         Error = "Podatak 3 se popunjava samo ako Podatak 2 ima 4 znamenke";
                         return false;
