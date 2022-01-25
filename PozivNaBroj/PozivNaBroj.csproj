@@ -52,68 +52,6 @@
     <Compile Include="Forms\frmMain.Designer.cs">
       <DependentUpon>frmMain.cs</DependentUpon>
     </Compile>
-    <Compile Include="Helpers\StringHelpers.cs" />
-    <Compile Include="Model\Calculators\BaseCalculator.cs" />
-    <Compile Include="Model\Calculators\ISO7064MOD1110.cs" />
-    <Compile Include="Model\Calculators\MOD10X.cs" />
-    <Compile Include="Model\Calculators\MOD10.cs" />
-    <Compile Include="Model\Calculators\MOD10ZB.cs" />
-    <Compile Include="Model\Calculators\MOD11INI.cs" />
-    <Compile Include="Model\Calculators\MOD11JMBJMBG.cs" />
-    <Compile Include="Model\Calculators\MOD11P7.cs" />
-    <Compile Include="Model\ModelPoziva.cs" />
-    <Compile Include="Model\PozivNaBrojService.cs" />
-    <Compile Include="Model\Podatak.cs" />
-    <Compile Include="Model\Validators\BaseValidator.cs" />
-    <Compile Include="Model\Validators\HR00.cs" />
-    <Compile Include="Model\Validators\HR01.cs" />
-    <Compile Include="Model\Validators\HR02.cs" />
-    <Compile Include="Model\Validators\HR03.cs" />
-    <Compile Include="Model\Validators\HR04.cs" />
-    <Compile Include="Model\Validators\HR05.cs" />
-    <Compile Include="Model\Validators\HR06.cs" />
-    <Compile Include="Model\Validators\HR07.cs" />
-    <Compile Include="Model\Validators\HR08.cs" />
-    <Compile Include="Model\Validators\HR09.cs" />
-    <Compile Include="Model\Validators\HR10.cs" />
-    <Compile Include="Model\Validators\HR11.cs" />
-    <Compile Include="Model\Validators\HR12.cs" />
-    <Compile Include="Model\Validators\HR13.cs" />
-    <Compile Include="Model\Validators\HR14.cs" />
-    <Compile Include="Model\Validators\HR15.cs" />
-    <Compile Include="Model\Validators\HR16.cs" />
-    <Compile Include="Model\Validators\HR17.cs" />
-    <Compile Include="Model\Validators\HR18.cs" />
-    <Compile Include="Model\Validators\HR19.cs" />
-    <Compile Include="Model\Validators\HR23.cs" />
-    <Compile Include="Model\Validators\HR24.cs" />
-    <Compile Include="Model\Validators\HR25.cs" />
-    <Compile Include="Model\Validators\HR26.cs" />
-    <Compile Include="Model\Validators\HR27.cs" />
-    <Compile Include="Model\Validators\HR28.cs" />
-    <Compile Include="Model\Validators\HR29.cs" />
-    <Compile Include="Model\Validators\HR30.cs" />
-    <Compile Include="Model\Validators\HR31.cs" />
-    <Compile Include="Model\Validators\HR33.cs" />
-    <Compile Include="Model\Validators\HR34.cs" />
-    <Compile Include="Model\Validators\HR35.cs" />
-    <Compile Include="Model\Validators\HR40.cs" />
-    <Compile Include="Model\Validators\HR41.cs" />
-    <Compile Include="Model\Validators\HR42.cs" />
-    <Compile Include="Model\Validators\HR43.cs" />
-    <Compile Include="Model\Validators\HR50.cs" />
-    <Compile Include="Model\Validators\HR55.cs" />
-    <Compile Include="Model\Validators\HR62.cs" />
-    <Compile Include="Model\Validators\HR63.cs" />
-    <Compile Include="Model\Validators\HR64.cs" />
-    <Compile Include="Model\Validators\HR65.cs" />
-    <Compile Include="Model\Validators\HR67.cs" />
-    <Compile Include="Model\Validators\HR68.cs" />
-    <Compile Include="Model\Validators\HR69.cs" />
-    <Compile Include="Model\Validators\HR83.cs" />
-    <Compile Include="Model\Validators\HR84.cs" />
-    <Compile Include="Model\Validators\HR99.cs" />
-    <Compile Include="Model\Validators\HRxx.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Forms\frmMain.resx">
@@ -148,6 +86,11 @@
   <ItemGroup>
     <None Include="Resources\Error.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\PozivNaBrojService\PozivNaBrojService.csproj">
+      <Project>{aebc7def-e92b-4fa7-b286-c6359d94fb92}</Project>
+      <Name>PozivNaBrojService</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

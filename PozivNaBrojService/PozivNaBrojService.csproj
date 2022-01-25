@@ -1,0 +1,110 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{AEBC7DEF-E92B-4FA7-B286-C6359D94FB92}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>PozivNaBrojService</RootNamespace>
+    <AssemblyName>PozivNaBrojService</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Helpers\StringHelpers.cs" />
+    <Compile Include="Model\ModelPoziva.cs" />
+    <Compile Include="Model\Calculators\BaseCalculator.cs" />
+    <Compile Include="Model\Calculators\ISO7064MOD1110.cs" />
+    <Compile Include="Model\Calculators\MOD10.cs" />
+    <Compile Include="Model\Calculators\MOD10X.cs" />
+    <Compile Include="Model\Calculators\MOD10ZB.cs" />
+    <Compile Include="Model\Calculators\MOD11INI.cs" />
+    <Compile Include="Model\Calculators\MOD11JMBJMBG.cs" />
+    <Compile Include="Model\Calculators\MOD11P7.cs" />
+    <Compile Include="Model\Validators\BaseValidator.cs" />
+    <Compile Include="Model\Validators\HR00.cs" />
+    <Compile Include="Model\Validators\HR01.cs" />
+    <Compile Include="Model\Validators\HR02.cs" />
+    <Compile Include="Model\Validators\HR03.cs" />
+    <Compile Include="Model\Validators\HR04.cs" />
+    <Compile Include="Model\Validators\HR05.cs" />
+    <Compile Include="Model\Validators\HR06.cs" />
+    <Compile Include="Model\Validators\HR07.cs" />
+    <Compile Include="Model\Validators\HR08.cs" />
+    <Compile Include="Model\Validators\HR09.cs" />
+    <Compile Include="Model\Validators\HR10.cs" />
+    <Compile Include="Model\Validators\HR11.cs" />
+    <Compile Include="Model\Validators\HR12.cs" />
+    <Compile Include="Model\Validators\HR13.cs" />
+    <Compile Include="Model\Validators\HR14.cs" />
+    <Compile Include="Model\Validators\HR15.cs" />
+    <Compile Include="Model\Validators\HR16.cs" />
+    <Compile Include="Model\Validators\HR17.cs" />
+    <Compile Include="Model\Validators\HR18.cs" />
+    <Compile Include="Model\Validators\HR19.cs" />
+    <Compile Include="Model\Validators\HR23.cs" />
+    <Compile Include="Model\Validators\HR24.cs" />
+    <Compile Include="Model\Validators\HR25.cs" />
+    <Compile Include="Model\Validators\HR26.cs" />
+    <Compile Include="Model\Validators\HR27.cs" />
+    <Compile Include="Model\Validators\HR28.cs" />
+    <Compile Include="Model\Validators\HR29.cs" />
+    <Compile Include="Model\Validators\HR30.cs" />
+    <Compile Include="Model\Validators\HR31.cs" />
+    <Compile Include="Model\Validators\HR33.cs" />
+    <Compile Include="Model\Validators\HR34.cs" />
+    <Compile Include="Model\Validators\HR35.cs" />
+    <Compile Include="Model\Validators\HR40.cs" />
+    <Compile Include="Model\Validators\HR41.cs" />
+    <Compile Include="Model\Validators\HR42.cs" />
+    <Compile Include="Model\Validators\HR43.cs" />
+    <Compile Include="Model\Validators\HR50.cs" />
+    <Compile Include="Model\Validators\HR55.cs" />
+    <Compile Include="Model\Validators\HR62.cs" />
+    <Compile Include="Model\Validators\HR63.cs" />
+    <Compile Include="Model\Validators\HR64.cs" />
+    <Compile Include="Model\Validators\HR65.cs" />
+    <Compile Include="Model\Validators\HR67.cs" />
+    <Compile Include="Model\Validators\HR68.cs" />
+    <Compile Include="Model\Validators\HR69.cs" />
+    <Compile Include="Model\Validators\HR83.cs" />
+    <Compile Include="Model\Validators\HR84.cs" />
+    <Compile Include="Model\Validators\HR99.cs" />
+    <Compile Include="Model\Validators\HRxx.cs" />
+    <Compile Include="Model\Podatak.cs" />
+    <Compile Include="ModelPozivaService.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

@@ -7,10 +7,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using PozivNaBroj.Model;
-using PozivNaBroj.Model.Calculators;
-using PozivNaBroj.Model.Validators;
+using PozivNaBrojService.Model;
+using PozivNaBrojService.Model.Calculators;
 using PozivNaBroj.Properties;
+using PozivNaBrojService;
 
 namespace PozivNaBroj.Forms
 {
@@ -41,7 +41,9 @@ namespace PozivNaBroj.Forms
 
         private void LoadData()
         {
-            lkpPozivNaBroj.DataSource = PozivNaBrojService.GetAll();
+            lkpPozivNaBroj.DataSource = ModelPozivaService.GetAll();
+
+            txtModel.Text = (lkpPozivNaBroj.SelectedItem as ModelPoziva).ToString();
         }
 
         #endregion
@@ -53,13 +55,13 @@ namespace PozivNaBroj.Forms
             textBox1.Text = textBox1.Text + result.ToString();*/
 
             var calculator = new ISO7064MOD1110();
-            var result = calculator.Calculate(textBox1.Text, false);
-            textBox1.Text = textBox1.Text + result.ToString();
+            var result = calculator.Calculate(txtModel.Text, false);
+            txtModel.Text = txtModel.Text + result.ToString();
         }
 
         private void btnValidate_Click(object sender, EventArgs e)
         {
-            var validator = lkpPozivNaBroj.SelectedItem as ModelPoziva;
+            var validator = ModelPozivaService.GetValidator(txtModel.Text);
             if (validator == null)
                 return;
 
@@ -80,13 +82,18 @@ namespace PozivNaBroj.Forms
 
         private void btnCreate_Click(object sender, EventArgs e)
         {
-            var validator = lkpPozivNaBroj.SelectedItem as ModelPoziva;
+            var validator = ModelPozivaService.GetValidator(txtModel.Text);
             if (validator == null)
                 return;
 
             validator.PozivNBr = txtPozivNaBroj.Text;
             validator.PozivNBr = validator.Kreiraj();
             txtPozivNaBroj.Text = validator.PozivNBr;
+        }
+
+        private void lkpPozivNaBroj_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            txtModel.Text = (lkpPozivNaBroj.SelectedItem as ModelPoziva).ToString();
         }
     }
 }

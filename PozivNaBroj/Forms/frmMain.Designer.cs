@@ -31,7 +31,7 @@ namespace PozivNaBroj.Forms
         {
             this.lkpPozivNaBroj = new System.Windows.Forms.ComboBox();
             this.button1 = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtModel = new System.Windows.Forms.TextBox();
             this.txtPozivNaBroj = new System.Windows.Forms.TextBox();
             this.btnValidate = new System.Windows.Forms.Button();
             this.btnCreate = new System.Windows.Forms.Button();
@@ -44,10 +44,11 @@ namespace PozivNaBroj.Forms
             // 
             this.lkpPozivNaBroj.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.lkpPozivNaBroj.FormattingEnabled = true;
-            this.lkpPozivNaBroj.Location = new System.Drawing.Point(12, 38);
+            this.lkpPozivNaBroj.Location = new System.Drawing.Point(12, 12);
             this.lkpPozivNaBroj.Name = "lkpPozivNaBroj";
             this.lkpPozivNaBroj.Size = new System.Drawing.Size(121, 21);
             this.lkpPozivNaBroj.TabIndex = 0;
+            this.lkpPozivNaBroj.SelectedIndexChanged += new System.EventHandler(this.lkpPozivNaBroj_SelectedIndexChanged);
             // 
             // button1
             // 
@@ -59,12 +60,13 @@ namespace PozivNaBroj.Forms
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // textBox1
+            // txtModel
             // 
-            this.textBox1.Location = new System.Drawing.Point(29, 120);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(139, 20);
-            this.textBox1.TabIndex = 2;
+            this.txtModel.Location = new System.Drawing.Point(51, 39);
+            this.txtModel.Name = "txtModel";
+            this.txtModel.ReadOnly = true;
+            this.txtModel.Size = new System.Drawing.Size(82, 20);
+            this.txtModel.TabIndex = 2;
             // 
             // txtPozivNaBroj
             // 
@@ -121,7 +123,7 @@ namespace PozivNaBroj.Forms
             this.Controls.Add(this.btnCreate);
             this.Controls.Add(this.btnValidate);
             this.Controls.Add(this.txtPozivNaBroj);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtModel);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.lkpPozivNaBroj);
             this.Name = "frmMain";
@@ -137,7 +139,7 @@ namespace PozivNaBroj.Forms
 
         private System.Windows.Forms.ComboBox lkpPozivNaBroj;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtModel;
         private System.Windows.Forms.TextBox txtPozivNaBroj;
         private System.Windows.Forms.Button btnValidate;
         private System.Windows.Forms.Button btnCreate;
