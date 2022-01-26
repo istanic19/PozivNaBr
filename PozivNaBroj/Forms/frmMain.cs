@@ -63,7 +63,11 @@ namespace PozivNaBroj.Forms
         {
             var validator = ModelPozivaService.GetValidator(txtModel.Text);
             if (validator == null)
+            {
+                pbResult.Image = Resources.Error;
+                lblError.Text = @"Nepoznat model";
                 return;
+            }
 
             validator.PozivNBr = txtPozivNaBroj.Text;
 

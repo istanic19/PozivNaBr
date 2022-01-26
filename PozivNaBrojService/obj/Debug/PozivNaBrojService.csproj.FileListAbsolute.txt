@@ -3,3 +3,9 @@ D:\Projekti\PozivNaBroj\PozivNaBr\PozivNaBrojService\bin\Debug\PozivNaBrojServic
 D:\Projekti\PozivNaBroj\PozivNaBr\PozivNaBrojService\bin\Debug\PozivNaBrojService.pdb
 D:\Projekti\PozivNaBroj\PozivNaBr\PozivNaBrojService\obj\Debug\PozivNaBrojService.dll
 D:\Projekti\PozivNaBroj\PozivNaBr\PozivNaBrojService\obj\Debug\PozivNaBrojService.pdb
+C:\Pr\PozivNaBroj\PozivNaBr\PozivNaBrojService\bin\Debug\PozivNaBrojService.dll
+C:\Pr\PozivNaBroj\PozivNaBr\PozivNaBrojService\bin\Debug\PozivNaBrojService.pdb
+C:\Pr\PozivNaBroj\PozivNaBr\PozivNaBrojService\obj\Debug\PozivNaBrojService.csproj.AssemblyReference.cache
+C:\Pr\PozivNaBroj\PozivNaBr\PozivNaBrojService\obj\Debug\PozivNaBrojService.csproj.CoreCompileInputs.cache
+C:\Pr\PozivNaBroj\PozivNaBr\PozivNaBrojService\obj\Debug\PozivNaBrojService.dll
+C:\Pr\PozivNaBroj\PozivNaBr\PozivNaBrojService\obj\Debug\PozivNaBrojService.pdb

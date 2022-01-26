@@ -44,7 +44,7 @@ namespace PozivNaBroj.Forms
             // 
             this.lkpPozivNaBroj.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.lkpPozivNaBroj.FormattingEnabled = true;
-            this.lkpPozivNaBroj.Location = new System.Drawing.Point(12, 12);
+            this.lkpPozivNaBroj.Location = new System.Drawing.Point(12, 64);
             this.lkpPozivNaBroj.Name = "lkpPozivNaBroj";
             this.lkpPozivNaBroj.Size = new System.Drawing.Size(121, 21);
             this.lkpPozivNaBroj.TabIndex = 0;
@@ -64,7 +64,6 @@ namespace PozivNaBroj.Forms
             // 
             this.txtModel.Location = new System.Drawing.Point(51, 39);
             this.txtModel.Name = "txtModel";
-            this.txtModel.ReadOnly = true;
             this.txtModel.Size = new System.Drawing.Size(82, 20);
             this.txtModel.TabIndex = 2;
             // 
